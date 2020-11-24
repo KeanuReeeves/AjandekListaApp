@@ -54,6 +54,7 @@
             this.ajandeklist.Name = "ajandeklist";
             this.ajandeklist.Size = new System.Drawing.Size(180, 147);
             this.ajandeklist.TabIndex = 0;
+            this.ajandeklist.SelectedIndexChanged += new System.EventHandler(this.ajandeklist_SelectedIndexChanged);
             // 
             // groupBox1
             // 
