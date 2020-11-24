@@ -37,14 +37,14 @@
             this.btnFelvesz = new System.Windows.Forms.Button();
             this.reszletesAdat = new System.Windows.Forms.ListBox();
             this.btntorol = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.UpdateGroup = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.UzletUpdate = new System.Windows.Forms.TextBox();
             this.nevUpdate = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.UpdateGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // ajandeklist
@@ -110,13 +110,14 @@
             this.btnFelvesz.TabIndex = 4;
             this.btnFelvesz.Text = "Felvesz";
             this.btnFelvesz.UseVisualStyleBackColor = true;
+            this.btnFelvesz.Click += new System.EventHandler(this.btnFelvesz_Click);
             // 
             // reszletesAdat
             // 
             this.reszletesAdat.FormattingEnabled = true;
-            this.reszletesAdat.Location = new System.Drawing.Point(446, 24);
+            this.reszletesAdat.Location = new System.Drawing.Point(447, 24);
             this.reszletesAdat.Name = "reszletesAdat";
-            this.reszletesAdat.Size = new System.Drawing.Size(173, 43);
+            this.reszletesAdat.Size = new System.Drawing.Size(173, 69);
             this.reszletesAdat.TabIndex = 2;
             // 
             // btntorol
@@ -128,21 +129,22 @@
             this.btntorol.Text = "Törlés";
             this.btntorol.UseVisualStyleBackColor = true;
             this.btntorol.Visible = false;
+            this.btntorol.Click += new System.EventHandler(this.btntorol_Click);
             // 
-            // groupBox2
+            // UpdateGroup
             // 
-            this.groupBox2.Controls.Add(this.btnUpdate);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.UzletUpdate);
-            this.groupBox2.Controls.Add(this.nevUpdate);
-            this.groupBox2.Location = new System.Drawing.Point(435, 96);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(184, 131);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Update";
-            this.groupBox2.Visible = false;
+            this.UpdateGroup.Controls.Add(this.btnUpdate);
+            this.UpdateGroup.Controls.Add(this.label2);
+            this.UpdateGroup.Controls.Add(this.label3);
+            this.UpdateGroup.Controls.Add(this.UzletUpdate);
+            this.UpdateGroup.Controls.Add(this.nevUpdate);
+            this.UpdateGroup.Location = new System.Drawing.Point(435, 124);
+            this.UpdateGroup.Name = "UpdateGroup";
+            this.UpdateGroup.Size = new System.Drawing.Size(184, 131);
+            this.UpdateGroup.TabIndex = 4;
+            this.UpdateGroup.TabStop = false;
+            this.UpdateGroup.Text = "Update";
+            this.UpdateGroup.Visible = false;
             // 
             // btnUpdate
             // 
@@ -152,6 +154,7 @@
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label2
             // 
@@ -190,7 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.UpdateGroup);
             this.Controls.Add(this.btntorol);
             this.Controls.Add(this.reszletesAdat);
             this.Controls.Add(this.groupBox1);
@@ -199,8 +202,8 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.UpdateGroup.ResumeLayout(false);
+            this.UpdateGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,7 +219,7 @@
         private System.Windows.Forms.TextBox nevFelvesz;
         private System.Windows.Forms.ListBox reszletesAdat;
         private System.Windows.Forms.Button btntorol;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox UpdateGroup;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
