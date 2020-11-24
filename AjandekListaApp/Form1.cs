@@ -64,21 +64,24 @@ namespace AjandekListaApp
         {
             reszletesAdat.Items.Clear();
             a = (Ajandek)ajandeklist.SelectedItem;
-            reszletesAdat.Items.Add(a.Id);
-            reszletesAdat.Items.Add(a.Nev);
-            if (a.Uzlet == null)
+            if (ajandeklist.SelectedIndex>0)
             {
-                reszletesAdat.Items.Add("Saját készítésű");
+                reszletesAdat.Items.Add(a.Id);
+                reszletesAdat.Items.Add(a.Nev);
+                if (a.Uzlet == null)
+                {
+                    reszletesAdat.Items.Add("Saját készítésű");
+                }
+                else
+                {
+                    reszletesAdat.Items.Add(a.Uzlet);
+                }
+                btntorol.Visible = true;
+                UpdateGroup.Visible = true;
+                nevUpdate.Text = a.Nev;
+                UzletUpdate.Text = a.Uzlet;
             }
             else
-            {
-                reszletesAdat.Items.Add(a.Uzlet);
-            }
-            btntorol.Visible = true;
-            UpdateGroup.Visible = true;
-            nevUpdate.Text = a.Nev;
-            UzletUpdate.Text = a.Uzlet;
-            if (ajandeklist.SelectedIndex<0)
             {
                 btntorol.Visible = false;
                 UpdateGroup.Visible = false;
@@ -141,9 +144,10 @@ namespace AjandekListaApp
             {
                 comm.Parameters.AddWithValue("@uzlet", null);
             }
-           
             var insert = comm.ExecuteNonQuery();
+            ajandeklist.SelectedIndex = -1;
             AdatBetoltes();
+            
         }
 
         private void btntorol_Click(object sender, EventArgs e)
@@ -163,6 +167,7 @@ namespace AjandekListaApp
             if (result==System.Windows.Forms.DialogResult.Yes)
             {
                 comm.ExecuteNonQuery();
+                ajandeklist.SelectedIndex = -1;
             }
             AdatBetoltes();
             
